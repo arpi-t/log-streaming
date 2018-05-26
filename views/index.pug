@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div(class="row")
+        div(class="col" align="center")
+            h1= "Log Tail"
+            p Tailing content of file #{fileName}
+            div(class="input-group")
+                textarea(rows=15, class="form-control", id="js_log_screen" readonly=true, placeholder="Logs on the way, Click on start tail button.")
+                input(type="hidden", value=token, class="js_token")
+    div(class="row action-row")
+        div(class="col")
+            button(class="btn btn-warning btn-sm js_stop") Stop Live tail
+        div(class="col-lg-7")
+            img(src='/images/loader.gif', class="js_loader loading", height=35, width="auto")
+        div(class="col")
+            button(class="btn btn-info btn-sm js_start") Start Live tail
+        div(class="col")
+            button(type="button", class="btn btn-default btn-sm js_clear") Clear
+        div(class="form-check col", align="right")
+            input(class="form-check-input", type="checkbox", value="", checked, id="js_auto_scroll")
+            label(class="form-check-label", for="js_auto_scroll") auto-scroll
+
+
+
