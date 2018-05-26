@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fileHandler = require("./../utils/fileUtil");
-const fileName = process.env['LOG_FILE']||'./../access.log';
+const fileName = process.env['LOG_FILE'] || __dirname + '/../access.log';
 
 router.get('/', function (req, res, next) {
     /*
@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
 
     // Note: Fos simplicity epoch is used as token to support mulitple tabs or simultaneous tail operations.
     // This doesn't handle collision of tokens.
-    res.render('index', {fileName: fileName, token:(new Date()).getTime()});
+    res.render('index', {fileName: fileName, token: (new Date()).getTime()});
 });
 
 router.get('/tail/', function (req, res, next) {
@@ -19,7 +19,7 @@ router.get('/tail/', function (req, res, next) {
     API supports long polling. Returns empty string if no logs else returns the newly added logs.
     API requires token which can be used for multiple use cases. For now send anything.
      */
-    if (!req.query.token){
+    if (!req.query.token) {
         return res.send("Error: Missing file token.")
     }
 
