@@ -1,10 +1,11 @@
 {
-  "name": "logtail",
+  "name": "realtime-logger",
   "version": "1.0.0",
-  "author": "Arpit Jain <arpitjain1992@gmail.com> (https://codewithlogic.wordpress.com/)"
+  "description": "A command-line tool for viewing logfile changes in realtime using browser tab.",
+  "author": "Arpit Jain <arpitjain1992@gmail.com> (https://codewithlogic.wordpress.com/)",
   "private": false,
-  "scripts": {
-    "start": "node ./bin/www"
+  "bin": {
+    "rt_log": "./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",

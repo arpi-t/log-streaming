@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const router = express.Router();
 const fileHandler = require("./../utils/fileUtil");
-const fileListPath = __dirname + '/../monitorList.json';
+const fileListPath = process.env['LOGVIEWER_PATH']|| (__dirname + '/../monitorList.json');
 let connections = {};
 
 router.get('/', function (req, res, next) {
