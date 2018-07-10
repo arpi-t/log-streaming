@@ -4,10 +4,21 @@ block content
     div(class="row")
         div(class="col" align="center")
             h1= "Log Tail"
-            p Tailing content of file #{fileName}
+    div(class="row")
+        div(class="col")
+            p Tailing content of file&nbsp
+                span(class="js_file_label")=fileName
+        div(class="col")
+            select(class="js_file_name float-right")
+                each file, index in fileList
+                    option(data-token=`${token}${index}`)=file
+                else
+                    option="No File to monitor! Please setup monitorList.json file."
+    div(class="row")
+        div(class="col")
             div(class="input-group")
                 textarea(rows=15, class="form-control", id="js_log_screen" readonly=true, placeholder="Logs on the way, Click on start tail button.")
-                input(type="hidden", value=token, class="js_token")
+                //input(type="hidden", value=token, class="js_token")
     div(class="row action-row")
         div(class="col")
             button(class="btn btn-warning btn-sm js_stop") Stop Live tail
