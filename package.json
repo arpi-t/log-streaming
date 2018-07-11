@@ -1,18 +1,24 @@
 {
-  "name": "realtime-logger",
-  "version": "1.0.1",
-  "description": "A command-line tool for viewing logfile changes in realtime using browser tab.",
-  "author": "Arpit Jain <arpitjain1992@gmail.com> (https://codewithlogic.wordpress.com/)",
-  "private": false,
-  "bin": {
-    "rt_log": "./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
-  }
+    "name": "realtime-logger",
+    "version": "1.0.1",
+    "description": "A command-line tool for viewing logfile changes in realtime using browser tab.",
+    "author": "Arpit Jain <arpitjain1992@gmail.com> (https://codewithlogic.wordpress.com/)",
+    "private": false,
+    "license": "SEE LICENSE IN <LICENSE>",
+    "homepage": "https://github.com/arpi-t/log-streaming#readme",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:arpi-t/log-streaming.git"
+    },
+    "bin": {
+        "rt_log": "./bin/www"
+    },
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+    "dependencies": {
+        "express": "~4.16.0",
+        "http-errors": "~1.6.2",
+        "pug": "2.0.0-beta11"
+    }
 }

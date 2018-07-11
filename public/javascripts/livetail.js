@@ -7,6 +7,7 @@
     let fileSelector = $('.js_file_name');
     let clearBtn = $('.js_clear');
     let fileLabel = $('.js_file_label');
+    let errorLabel = $('.js_error');
     let source = null;
 
     function startLogStream() {
@@ -16,6 +17,14 @@
                 source.addEventListener("log", function (event) {
                     addLogToScreen((JSON.parse(event.data) || {}).logs);
                 });
+                source.onerror = (e) => {
+                    console.log(e);
+                    stopBtn.click();
+                    errorLabel.text("An error occurred! Please refresh the browser.").show();
+                    setTimeout(()=> {
+                        errorLabel.hide(500);
+                    }, 3000)
+                }
             }
 
         } else {
@@ -39,6 +48,7 @@
         logScreen = $('#js_log_screen');
         loader = $('.js_loader');
         loader.hide();
+        errorLabel.hide();
         stopBtn.hide();
     });
 
