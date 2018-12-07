@@ -1,10 +1,10 @@
 {
     "name": "realtime-logger",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A command-line tool for viewing logfile changes in realtime using browser tab.",
     "author": "Arpit Jain <arpitjain1992@gmail.com> (https://codewithlogic.wordpress.com/)",
     "private": false,
-    "license": "SEE LICENSE IN <LICENSE>",
+    "license": "MIT",
     "homepage": "https://github.com/arpi-t/log-streaming#readme",
     "repository": {
         "type": "git",
@@ -18,7 +18,6 @@
     },
     "dependencies": {
         "express": "~4.16.0",
-        "http-errors": "~1.6.2",
         "pug": "2.0.0-beta11"
     }
 }

@@ -13,7 +13,7 @@
     function startLogStream() {
         if (window.EventSource) {
             if (!source) {
-                source = new EventSource(`http://localhost:3000/livetail/?token=${fileSelector.find(':selected').data('token')}&fileName=${fileSelector.val()}`);
+                source = new EventSource(`/livetail/?token=${fileSelector.find(':selected').data('token')}&fileName=${fileSelector.val()}`);
                 source.addEventListener("log", function (event) {
                     addLogToScreen((JSON.parse(event.data) || {}).logs);
                 });
